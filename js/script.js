@@ -110,6 +110,10 @@ window.onload = function () {
 
          let currency = from.value
          btnOk.addEventListener('click', () => {
+
+            let spinner = document.getElementById('spinner')
+            spinner.classList.add('display')
+            document.getElementById('output').classList.remove('display-block')
             let dateNeeded = date.value
             let url = `https://api.exchangerate.host/${dateNeeded}`
             axios.get(url, {
@@ -119,6 +123,7 @@ window.onload = function () {
                }
             })
                .then((response) => {
+                  spinner.classList.remove('display')
                   let res = Object.values(response.data.rates)
                   console.log(res[0])
                   document.getElementById('output').classList.add('display-block')

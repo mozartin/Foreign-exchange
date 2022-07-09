@@ -191,3 +191,7 @@ body {
    font-size: 25px;
    color: rgb(35, 31, 80)
 }
+
+.display {
+   display: block;
+}
