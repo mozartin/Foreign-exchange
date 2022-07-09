@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Отримання JSON об'єкта</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        window.onload = function () {
+            // var xhr = new XMLHttpRequest();
+
+            document.getElementById("buttonGet").onclick = function () {
+                let url = `https://api.exchangerate.host/latest`
+                axios.get(url, {
+                    params: {
+                        base: "USD",
+                        symbols: "UAH"
+                    }
+                })
+                    .then((response) => {
+                        console.log(response.data)
+                    })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input id="buttonGet" type="button" value="Get Data" />
+    <p id="output"></p>
+</body>
+
+</html>
