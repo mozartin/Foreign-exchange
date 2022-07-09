@@ -16,7 +16,6 @@ window.onload = function () {
          let defaule = `${nowMonth.getFullYear()}-${currentMonth1}`
          console.log(defaule)
          month.setAttribute('value', defaule)
-         let counter = 0
          for (const key in response.data.rates) {
             let option = document.createElement('option')
             option.setAttribute('name', key)
@@ -41,7 +40,7 @@ window.onload = function () {
             optionTo2.setAttribute('name', key)
             optionTo2.innerText = key
 
-            if(key == 'USD'){
+            if(key == 'EUR'){
                option.setAttribute('selected', '')
                option2.setAttribute('selected', '')
             }
